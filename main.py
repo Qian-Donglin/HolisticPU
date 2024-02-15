@@ -5,8 +5,9 @@ import os
 import shutil
 import time
 from collections import OrderedDict
-from model.resnet_zoo import resnet18, resnet34, resnet50
-from model.ResNet_Zoo import ResNet18
+from model.ResNet_Zoo import ResNet18, ResNet34, ResNet50
+# from model.resnet_zoo import resnet18, resnet34, resnet50
+# from model.ResNet_Zoo import ResNet18
 from model.alexnet import alexnet
 from model.cnn7 import cnn_cifar, cnn_stl
 from model.lenet5 import lenet_fmnist
@@ -184,11 +185,11 @@ def main():
             if args.dataset == 'cifar10':
                 model = ResNet18()
             if args.dataset == 'stl10' or args.dataset=='alzheimer':
-                model = resnet18()
+                model = ResNet18()
         elif args.arch == 'ResNet34':
-            model = resnet34()
+            model = ResNet34()
         elif args.arch == 'ResNet50':
-            model = resnet50()
+            model = ResNet50()
         elif args.arch == 'AlexNet':
             model = alexnet()
         elif args.arch == 'CNN_CIFAR':
